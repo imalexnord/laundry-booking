@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#111827">
+    <title>Tvättbokning</title>
+    <link rel="stylesheet" href="/styles.css?v=generic">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="card hidden" id="admin-login-view">
+        <div class="hero">
+          <p class="eyebrow">Tvättbokning</p>
+          <h1>Admin</h1>
+          <p class="intro">Logga in för att se och hantera bokade tvättdagar.</p>
+        </div>
+
+        <form id="admin-login-form">
+          <label>
+            <span>Adminkod</span>
+            <input name="code" type="password" autocomplete="current-password" required>
+          </label>
+
+          <button type="submit">Logga in som admin</button>
+        </form>
+
+        <div id="admin-login-message" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="card hidden" id="admin-view">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Tvättbokning</p>
+            <h1>Admin</h1>
+            <p>Aktiva bokningar</p>
+          </div>
+          <button class="secondary small-button" id="admin-logout-button" type="button">Logga ut</button>
+        </div>
+
+        <p class="notice">Admin ser lägenhetsnummer för att kunna hantera bokningar. Systemet lagrar inga IP-adresser.</p>
+
+        <div id="admin-message" role="status" aria-live="polite"></div>
+        <div id="admin-bookings"></div>
+      </section>
+
+      <section class="card" id="login-view">
+        <div class="hero">
+          <p class="eyebrow">Tvättbokning</p>
+          <h1>Tvättbokning</h1>
+          <p class="intro">Logga in med ditt lägenhetsnummer och bokningskod.</p>
+        </div>
+
+        <form id="login-form">
+          <label>
+            <span>Lägenhetsnummer</span>
+            <input name="apartmentNumber" inputmode="numeric" autocomplete="off" placeholder="1001" maxlength="4" required>
+          </label>
+
+          <label>
+            <span>Bokningskod</span>
+            <input name="bookingCode" type="password" inputmode="numeric" autocomplete="current-password" placeholder="••••" required>
+          </label>
+
+          <button type="submit">Logga in</button>
+        </form>
+
+        <div id="login-message" role="status" aria-live="polite"></div>
+
+        <p class="helper">Du kan bara boka och avboka för din egen lägenhet.</p>
+      </section>
+
+      <section class="card hidden" id="app-view">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow">Tvättbokning</p>
+            <h1>Tvättider</h1>
+            <p id="apartment-label"></p>
+          </div>
+          <button class="secondary small-button" id="logout-button" type="button">Logga ut</button>
+        </div>
+
+        <p class="notice">Du bokar en hel kalenderdag. Andra ser bara att dagen är upptagen.</p>
+
+        <div id="message" role="status" aria-live="polite"></div>
+        <div id="calendar" aria-label="Kalender med tvättider"></div>
+      </section>
+    </main>
+
+    <script src="/app.js?v=generic"></script>
+  </body>
+</html>

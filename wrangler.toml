@@ -1,0 +1,20 @@
+name = "laundry-booking"
+main = "src/index.ts"
+compatibility_date = "2026-05-14"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "laundry-booking"
+database_id = "REPLACE_WITH_DATABASE_ID"
+
+[vars]
+APP_NAME = "Tvättbokning"
+SESSION_COOKIE_NAME = "laundry_session"
+SESSION_TTL_SECONDS = "604800"
+
+[triggers]
+crons = ["0 3 * * *"]
