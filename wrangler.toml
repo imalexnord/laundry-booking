@@ -9,7 +9,7 @@ binding = "ASSETS"
 [[d1_databases]]
 binding = "DB"
 database_name = "laundry-booking"
-database_id = "R0e48debb-d7a0-4533-ae47-5b91c6f99a69"
+database_id = "0e48debb-d7a0-4533-ae47-5b91c6f99a69"
 
 [vars]
 APP_NAME = "Tvättbokning"
